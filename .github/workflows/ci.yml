@@ -50,10 +50,7 @@ jobs:
  
       - name: Executar smoke test 
         run: | 
-          docker run -d \ 
-            --name app-ci \ 
-            -p 127.0.0.1:18000:8000 \ 
-            app-suporte:ci 
+          docker run -d --name app-ci -p 127.0.0.1:18000:8000 app-suporte:ci 
  
           trap 'docker rm -f app-ci >/dev/null 2>&1 || true' EXIT 
  
